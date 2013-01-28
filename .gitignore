@@ -11,6 +11,19 @@ web/css/*
 web/js/*
 web/uploads/*
 
+# -- Composer -----------------------------------------
+composer.phar
+
+# -- PHPUnit ------------------------------------------
+app/phpunit.xml  
+
+# -- Editores -----------------------------------------
+# vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
 #################
 ## Eclipse
 #################
