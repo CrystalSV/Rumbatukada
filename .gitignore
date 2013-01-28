@@ -162,6 +162,10 @@ pip-log.txt
 # Mac crap
 .DS_Store
 
-#Symfony cache
-cache/*
-logs/*
+#Symfony
+/web/bundles/
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/vendor/
+/app/config/parameters.yml
