@@ -1,0 +1,23 @@
+
+<table cellpadding="0" celspacing="0">
+<tr>
+	<td>#</<td>
+	<td>Titulo</<td>
+	<td>Fecha</<td>
+	<td>Lugar</<td>
+	<td>Hora</<td>
+	<td>Descripci&oacute;n</<td>
+</tr>
+{% for event in event %}
+	<tr>
+		<td>{{event.id}}</td>
+		<td>{{event.title}}</td>
+		<td>{{event.date}}</td>
+		<td>{{event.place}}</td>
+		<td>{{event.time}}</td>
+		<td>{{event.description}}</td>
+		<td><a href="{{ path('modificarEvento', {'id' : (event.id)}) }}"> modificar </a></td>
+		<td><a href="{{ path('eliminarEventos', {'id' : (event.id)}) }}" onClick="return alert('ola k ase');">eliminar</a></td>
+	</tr>
+{% endfor %}
+</table>

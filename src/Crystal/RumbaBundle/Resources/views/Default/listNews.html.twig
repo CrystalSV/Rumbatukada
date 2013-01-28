@@ -1,0 +1,11 @@
+<a href="{{ path('agregarNoticia') }}">Agregar Noticia</a>
+<br /><br /><br />
+{% for New in News %}
+
+	{{New.title}} <br />
+	
+{% else %}
+	
+	lol
+
+{% endfor %}

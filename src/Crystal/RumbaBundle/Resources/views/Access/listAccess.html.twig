@@ -1,0 +1,16 @@
+<table cellpadding="0" celspacing="0">
+<tr>
+	
+	<td>Usuario</<td>
+	<td>Contra</<td>
+	
+</tr>
+{% for access in access %}
+	<tr>
+		<td>{{access.user}}</td>
+		<td>{{access.pass}}</td>
+		<td><a href="{{ path('modificarAcceso', {'id' : (access.id)}) }}"> modificar </a></td>
+		<td><a href="{{ path('eliminarAcceso', {'id' : (access.id)}) }}" onClick="return alert('ola k ase');">eliminar</a></td>
+	</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,20 @@
+<table>
+	<tr>
+		<td>#</td>
+		<td>Instrumento</td>
+		<td>Tipo</td>
+		<td>Act</td>
+		<td>Del</td>
+	</tr>
+	{% for instrument in instrument%}
+	<tr>
+		<td>{{instrument.id}}</td>
+		<td>{{instrument.name}}</td>
+		<td>{{instrument.type}}</td>
+		<td> <a href="{{ path('modificarInstrumento', {'id' : (instrument.id)}) }}">M<a/> </td>
+		<td> <a href="{{ path('eliminarInstrumento', {'id' : (instrument.id)}) }}">E</a> </td>
+	</tr>
+	{% endfor %}
+</table>
+
+

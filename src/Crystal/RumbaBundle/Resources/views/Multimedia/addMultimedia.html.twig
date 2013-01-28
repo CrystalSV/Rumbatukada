@@ -1,0 +1,111 @@
+<! Doctype html>
+<html lang="es">
+	<head>
+		<title>Agregar Archivos multimedia</title>
+
+		<style>
+			.preview
+			{
+				position: relative;
+			}
+
+			.play
+			{
+				position: absolute;
+				top: 49px; 
+				left: 76px;
+				opacity: .7;
+			}
+
+			.video
+			{
+				border: 3px dashed #000;
+				display: inline-block;
+				width: 200;
+				height: 130;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				margin-bottom: 40px;
+				margin-right: 20px;
+				vertical-align: bottom;
+			}
+
+		</style>
+
+		<script>
+			var numVideos = 0;
+			function getVideoId(control)
+			{
+				var url = document.getElementById(control).value;
+				var array = url.split('=');
+				var videoId = array[1];
+				
+				return videoId;
+			}
+
+			function generateThumbnail(control, id)
+			{
+				var container = document.getElementById(id + numVideos);
+				var videoId = getVideoId(control);
+
+				var img = container.getElementsByTagName('img')[0];
+				img.src = 'http://img.youtube.com/vi/' + videoId + '/0.jpg';
+
+				var link = container.getElementsByTagName('a')[0].href = 'http://www.youtube.com/watch?v=' + videoId;
+
+				container.getElementsByTagName('input')[0].value = videoId;
+
+				container.getElementsByTagName('div')[0].style.display = 'none';
+				container.getElementsByTagName('div')[1].style.display = 'block';
+
+				numVideos++;
+				document.getElementById('numVideos').value = numVideos;
+
+				cloneVideo(control, id + (numVideos - 1), videoId);
+			}
+
+			function cloneVideo(control, id, videoId)
+			{
+				var newDiv = document.getElementById(id).cloneNode(true);
+
+				newDiv.id = 'video' + numVideos;
+
+				newDiv.getElementsByTagName('input')[0].name = 'txtVideo' + (numVideos);
+
+				newDiv.getElementsByTagName('div')[0].style.display = 'block';
+				newDiv.getElementsByTagName('div')[1].style.display = 'none';
+
+				document.getElementById('videos').appendChild(newDiv);
+
+				document.getElementById(control).value = '';
+			}
+
+		</script>
+	</head>
+	<body>
+		<form method="post">
+			<div id="videos">
+				<div id="video0" class="video">
+					<div style="display: block; line-height: 8; text-align: center;">
+						Video
+					</div>
+					<div class="preview" style="display: none">
+						<a target="_blank">
+							<img src="" width="200" height="130" />
+							<img class="play" src="http://www.symmetrix.ca/wp-content/themes/symmetrix/images/vom-playbutton.png" />
+						</a>
+						<input type="hidden" name="txtVideo0" value="" />
+					</div>
+				</div>
+			</div>
+			<div display="block">
+				URL de Youtube: <input type="url" name="txtVideo" id="txtVideo" />
+				 <a onClick="generateThumbnail('txtVideo', 'video')">Guardar</a>				 
+			</div>
+
+			<br /><br />
+			<input type="hidden" name="numVideos" id="numVideos" value="">
+			<input type="submit" value="Enviar">
+		</form>
+	</body>	
+</html>

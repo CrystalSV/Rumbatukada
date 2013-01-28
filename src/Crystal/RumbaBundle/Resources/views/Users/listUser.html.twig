@@ -1,0 +1,28 @@
+<table cellpadding="0" celspacing="0">
+<tr>
+	
+	<td>Usuario</<td>
+	<td>Contra</<td>
+	<td>Nombre</<td>
+	<td>Edad</<td>
+	<td>Email</<td>
+	<td>Facebook</<td>
+	<td>Twitter</<td>
+	<td>Foto</<td>
+	
+</tr>
+{% for user in user %}
+	<tr>
+		<td>{{user.user}}</td>
+		<td>{{user.pass}}</td>
+		<td>{{user.name}}</td>
+		<td>{{user.age}}</td>
+		<td>{{user.email}}</td>
+		<td>{{user.facebook}}</td>
+		<td>{{user.twitter}}</td>
+		<td>{{user.picture}}</td>
+		<td><a href="{{ path('modificarUsuario', {'id' : (user.id)}) }}"> modificar </a></td>
+		<td><a href="{{ path('eliminarUsuario', {'id' : (user.id)}) }}" onClick="return alert('ola k ase');">eliminar</a></td>
+	</tr>
+{% endfor %}
+</table>

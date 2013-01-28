@@ -1,0 +1,9 @@
+{% for New in News %}
+
+	{{New.title}} <a href="{{ path('eliminarNoticia', { 'id' : (New.idEvent.id) } ) }}">Eliminar</a> <a href="{{ path('modificarNoticia', { 'id' : (New.idEvent.id) } ) }}">Modificar</a><br /> 
+	
+{% else %}
+	
+	lol
+
+{% endfor %}

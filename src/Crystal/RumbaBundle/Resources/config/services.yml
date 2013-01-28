@@ -1,0 +1,7 @@
+parameters:
+#    crystal_rumba.example.class: Crystal\RumbaBundle\Example
+
+services:
+#    crystal_rumba.example:
+#        class: %crystal_rumba.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

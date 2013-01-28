@@ -1,0 +1,95 @@
+home:
+    pattern:  /
+    defaults: { _controller: CrystalRumbaBundle:Default:index }
+
+crearEventos:
+    pattern: /admin/crearEventos
+    defaults: { _controller: CrystalRumbaBundle:Events:create }
+
+eliminarEventos:
+    pattern: /admin/eliminarEvento/{id}
+    defaults: { _controller: CrystalRumbaBundle:Events:delete }
+
+modificarEvento:
+    pattern:  /admin/modificarEvento/{id}
+    defaults: { _controller: CrystalRumbaBundle:Events:update }
+
+calendarizacion:
+    pattern: /admin/calendarizacion
+    defaults: { _controller: CrystalRumbaBundle:Events:list }
+
+agregarNoticia:
+    pattern: /admin/agregarNoticia/{idEvent}
+    defaults: { _controller: CrystalRumbaBundle:News:add }
+
+listaNoticias:
+    pattern: /admin/listaNoticias
+    defaults: { _controller: CrystalRumbaBundle:News:list }
+
+eliminarNoticia:
+    pattern: /admin/eliminarNoticia/{id}
+    defaults: { _controller: CrystalRumbaBundle:News:delete }
+
+modificarNoticia:
+    pattern: /admin/modificarNoticia/{id}
+    defaults: { _controller: CrystalRumbaBundle:News:update }
+
+agregarInstrumentos:
+    pattern: /admin/agregarInstrumentos
+    defaults: { _controller: CrystalRumbaBundle:Instruments:add }
+
+listaInstrumentos:
+    pattern: /admin/listaInstrumentos
+    defaults: { _controller: CrystalRumbaBundle:Instruments:list }
+
+modificarInstrumento:
+    pattern: /admin/modificarInstrumento/{id}
+    defaults: { _controller: CrystalRumbaBundle:Instruments:update}
+
+eliminarInstrumento:
+    pattern: /admin/eliminarInstrumento/{id}
+    defaults: { _controller: CrystalRumbaBundle:Instruments:delete }
+
+agregarUsuario:
+    pattern: /admin/agregarUsuario
+    defaults: { _controller: CrystalRumbaBundle:Users:add }
+
+listaUsuario:
+    pattern: /admin/listaUsuario 
+    defaults: { _controller: CrystalRumbaBundle:Users:list }
+
+modificarUsuario:
+    pattern: /admin/modificarUsuario/{id}
+    defaults: { _controller: CrystalRumbaBundle:Users:update }
+
+eliminarUsuario:
+    pattern: /admin/eliminarUsuario/{id}
+    defaults: { _controller:CrystalRumbaBundle:Users:delete }
+
+# crearAcceso:
+#     patter: /admin/crearAcceso
+#     defaults: { _controller:  CrystalRumbaBundle:Access:create }
+
+listaAcceso:
+    pattern: /admin/listaAcceso
+    defaults: { _controller:  CrystalRumbaBundle:Access:list }
+
+agregarAcceso:
+    pattern: /admin/agregarAcceso
+    defaults: { _controller: CrystalRumbaBundle:Access:add }
+
+modificarAcceso:
+    pattern: /admin/modificarAcceso/{id}
+    defaults: { _controller: CrystalRumbaBundle:Access:update }
+
+eliminarAcceso:
+    pattern: /admin/eliminarAcceso/{id}
+    defaults: { _controller:CrystalRumbaBundle:Access:delete }
+
+listaMultimedia:
+    pattern: /admin/listaMultimedia/{id}
+    defaults: { _controller:  CrystalRumbaBundle:Multimedia:list }
+
+agregarMultimedia:
+    pattern: /admin/agregarMultimedia/{id}
+    defaults: { _controller: CrystalRumbaBundle:Multimedia:add }
